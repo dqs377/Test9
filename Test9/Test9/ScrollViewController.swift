@@ -8,14 +8,49 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UIViewController,UIScrollViewDelegate {
 
+    var page:UIPageControl = UIPageControl.init();
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
-        // Do any additional setup after loading the view.
+       
+        let sc:UIScrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 200, width: self.view.bounds.size.width, height: 200));
+        self.view.addSubview(sc);
+        sc.contentSize = CGSize.init(width: self.view.bounds.size.width * 3, height: 200);
+        sc.isPagingEnabled = true;
+        sc.delegate = self;
+        
+        
+        for index in 0..2 {
+            let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 200));
+            if index == 0{
+                view.backgroundColor = UIColor.green;
+            }elseif(index == 0){
+               view.backgroundColor = UIColor.orange;
+            }else{
+                view.backgroundColor = UIColor.blue;
+            }
+            sc.addSubview(view)
+        }
+        
+        
+        
+        self.page.frame = CGRect.init(x: 0, y: 400, width: 200, height: 30);
+        page.currentPage = 0;
+        page.currentPageIndicatorTintColor = UIColor.green;
+        page.pageIndicatorTintColor = UIColor.gray;
+        self.view.addSubview(page);
+        
+        
+        
+        
+        
+        
     }
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.page.currentPage = Int(scrollView.contentOffset.x/self.view.bounds.size.width);
+    }
 
     /*
     // MARK: - Navigation
