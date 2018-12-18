@@ -14,9 +14,40 @@ class UIAlertViewController: UIViewController {
         super.viewDidLoad()
 
         
+        
+        
+        
     }
 
-
+    @IBAction func alertClick(_ sender: Any) {
+        let alert:UIAlertController = UIAlertController.init(title: "温馨提示", message: "狼来啦", preferredStyle: .alert);
+        let action1:UIAlertAction = UIAlertAction.init(title: "取消", style: .cancel) { (action) in
+            
+        }
+        let action2:UIAlertAction = UIAlertAction.init(title: "确定", style: .cancel) { (action) in
+            
+        }
+        
+        alert.addAction(action1);
+        alert.addAction(action2);
+        self.present(alert, animated: true, completion: nil);
+        
+        
+    }
+    
+    @IBAction func sheetClick(_ sender: Any) {
+        let alert:UIAlertController = UIAlertController.init(title: "温馨提示", message: "狼来啦", preferredStyle: .actionSheet);
+        let action1:UIAlertAction = UIAlertAction.init(title: "取消", style: .cancel) { (action) in
+            
+        }
+        let action2:UIAlertAction = UIAlertAction.init(title: "确定", style: .cancel) { (action) in
+            
+        }
+        
+        alert.addAction(action1);
+        alert.addAction(action2);
+        self.present(alert, animated: true, completion: nil);
+    }
     /*
     // MARK: - Navigation
 

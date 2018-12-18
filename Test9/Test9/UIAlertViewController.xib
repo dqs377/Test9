@@ -24,11 +24,17 @@
                     <rect key="frame" x="123" y="217" width="99" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Alert"/>
+                    <connections>
+                        <action selector="alertClick:" destination="-1" eventType="touchUpInside" id="ZbR-ho-kGg"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4k-sm-fRP">
                     <rect key="frame" x="138" y="318" width="84" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="ActionSheet"/>
+                    <connections>
+                        <action selector="sheetClick:" destination="-1" eventType="touchUpInside" id="2rP-pE-Ovu"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
